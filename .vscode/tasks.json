@@ -4,7 +4,7 @@
         {
             "label": "Serve Cork7",
             "type": "shell",
-            "command": "echo 'Starting Cork7 server' && python3 -m http.server 8000 --bind 0.0.0.0",
+            "command": "python3 .vscode/serve.py",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "cork7-server",

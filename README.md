@@ -16,7 +16,7 @@ This repository contains the front-end assets for the Cork7 experience:
 
 ### Option 1: VS Code
 
-Press **F5** in VS Code and choose the existing launch configuration for the project. That starts a local static server and opens the app in the integrated browser.
+Press **F5** in VS Code and choose the existing launch configuration for the project. It reuses an existing Cork7 server on port `8000`, or starts one if needed, then opens the app in the integrated browser.
 
 ### Option 2: Local Python server
 
@@ -62,8 +62,10 @@ http://localhost:8001
 ├── css/            # compiled stylesheets
 ├── _next/static/   # framework chunk and stylesheet URLs used at runtime
 ├── fonts/          # bundled web fonts
-├── images/         # app branding and marketing assets
+├── grabs/          # animation data loaded with the 3D rider
+├── images/         # branding, mountain-map art, and park previews
 ├── js/             # client-side JavaScript bundles
+├── models/         # local 3D course geometry
 ├── onboarding/     # local fallback art used by startup/loading screens
 ├── index.html      # app entry point
 ├── README.md       # project overview and run instructions
@@ -76,10 +78,13 @@ http://localhost:8001
 - This project is served as a static site.
 - There is no Node package install or app build step required for local development.
 - Keep `_next/static/` when copying or deploying the site; the client runtime loads chunks and styles from those paths.
+- Keep `models/`, `grabs/`, `images/mountain-map/`, and the Meshopt decoder in `js/`; the 3D scene, rider animations, and responsive map need them.
 - If assets are missing or a browser shows an empty startup image, the bundled fallback onboarding folder ensures the page still loads correctly.
+- Guest accounts save the rider name and progress on the current device only. They do not sync across devices and can be lost if the browser's site data is cleared; online account features still require signing in.
 
 ## Troubleshooting
 
 - If the page does not load, confirm that the local HTTP server is still running.
+- If port `8000` is already serving another project, stop that server before launching Cork7.
 - If port `8000` is busy, use port `8001` as shown above.
 - If the browser is blank or some art is missing, refresh the page after ensuring the static server is serving the project root.
