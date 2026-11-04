@@ -1,0 +1,9 @@
+{
+    "remote.autoForwardPorts": true,
+    "remote.portsAttributes": {
+        "8000": {
+            "label": "Cork7",
+            "onAutoForward": "openBrowser"
+        }
+    }
+}

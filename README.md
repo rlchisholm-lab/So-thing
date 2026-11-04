@@ -60,6 +60,7 @@ http://localhost:8001
 ```text
 .
 ├── css/            # compiled stylesheets
+├── _next/static/   # framework chunk and stylesheet URLs used at runtime
 ├── fonts/          # bundled web fonts
 ├── images/         # app branding and marketing assets
 ├── js/             # client-side JavaScript bundles
@@ -74,6 +75,7 @@ http://localhost:8001
 
 - This project is served as a static site.
 - There is no Node package install or app build step required for local development.
+- Keep `_next/static/` when copying or deploying the site; the client runtime loads chunks and styles from those paths.
 - If assets are missing or a browser shows an empty startup image, the bundled fallback onboarding folder ensures the page still loads correctly.
 
 ## Troubleshooting
